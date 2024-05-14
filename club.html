@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @keyframes fadey { 
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+    }
+    body { 
+      font-family: Avenir, Arial, sans-serif; 
+      margin: 0;
+      font-size: 0;
+    }
+    figure#slideshow { 
+      width: 100%; 
+      margin: 0 auto; 
+      position: relative;
+      padding:10px; 
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+    figure#slideshow img { 
+      position:absolute; 
+      left: 0; top: 0; 
+      width: 100%; height:100%; 
+      opacity: 0; 
+    }
+    figure#slideshow img:first-child { position: relative; }
+    
+    #container:fullscreen { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      background: #fff; 
+    }
+    #container:-moz-full-screen figure, #container:-ms-full-screen figure, #container:-webkit-fullscreen figure, #container:fullscreen figure { 
+      width: 100%;
+      margin: 0 auto;
+      background: #fff; 
+    }
+    :-webkit-full-screen { 
+      width: 100%; height: 100%; 
+    }
+    *:-moz-full-screen { 
+      background: #fff; 
+    }
+    *:-webkit-full-screen { 
+      background: #fff; 
+    }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="heading">
+            <h1 style=" font-size: 60px;
+            text-shadow: 3px 1px rgb(19, 2, 68);
+            color: rgb(19,2,68);
+            font-family: serif;"> Club Details</h1>
+            
+        </div>
+        </div>
+    <div>
+    <figure id="container" onclick="fullScreen(this)">
+       
+        <figure id="slideshow">
+           
+          <img src="https://gct.ac.in/sites/gct.ac.in/files/IMG2_1.jpeg" alt>
+          <img src="https://gct.ac.in/sites/gct.ac.in/files/IMG1_4.jpeg" alt>
+          <img src="https://gct.ac.in/sites/gct.ac.in/files/IMG1_2.jpeg" alt>
+          <img src="https://gct.ac.in/sites/gct.ac.in/files/698D486EF86B43FC8BB9FD82BF657B50.jpg" alt>
+         <img src="https://static.mygov.in/indiancc/2021/08/mygov-999999999570116001-1024x682.jpg" alt>
+      <img src="https://i.ytimg.com/vi/g8F6wcsSYig/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgUyhEMA8=&rs=AOn4CLBS1PLL0djWSRCHgzeYmYhmQFqjOQ" alt>
+      <img src="https://ysyouthgct.in/media/intellect2022/group-1-min.JPG" alt>
+      <img src="https://media.licdn.com/dms/image/C5603AQH8vjsYXXQ9fQ/profile-displayphoto-shrink_800_800/0/1623126240409?e=2147483647&v=beta&t=AlZ94iOxACZG9dn_XX9va3nuMO_RMnt0qgxDsXcVxPg" alt>
+      <img src="https://www.karthikchidambaram.com/wp-content/uploads/2015/02/GCT-Global-Alumni-Reunion-6-compressed.jpg" alt>
+      
+        </figure>
+      </figure>
+    </div>
+
+  <div class="menu">
+    <div class="food-item">
+        <img src="data:image/png;base64,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">
+        <div class="details">
+            <div class="details-sub">
+                <h5 class="pr">Rotaract GCT</h5>
+                <h5 class="price">Dr.P.Ilamathi APPE</h5>
+            </div>
+            <p> One of the active clubs of GCT has been initiated by the students of Production Engineering Association. The President of the club for the academic years of 2011-12, 2012-13, 2013-14, 2016-17 and 2019-20 has been from the Department of Production Engineering. The Secretary for the academic year of 2018-19 is from the Department of Production Engineering .The treasurer of the club for the academic year 2018-19 has been from the department of Production Engineering. The office bearers of the ROTRACT CLUB for the past ten years have been from the department of Production Engineering.
+
+            </p>
+            <button><a href="addstudent.html">Register</a></button>
+        </div>
+        </div>
+        <div class="food-item">
+          <img src="https://www.codingclubgct.in/static/media/home.a56b6d350fdeffe69ce5.png">
+          <div class="details">
+              <div class="details-sub">
+                  <h5 class="pr">Coding Club of GCT</h5>
+                  <h5 class="price">Ms.R.Devi APIT</h5>
+              </div>
+              <p> Here we practice and participate in programming competitions, solving real-world problems
+                Develop applications, providing tech support to our college and working on open source contributions. </p>
+              <button><a href="addstudent.html">Register</a></button>
+          </div>
+          </div>
+          <div class="food-item">
+            <img src="https://gcgct.files.wordpress.com/2019/01/untitled-1.png?w=825">
+            <div class="details">
+                <div class="details-sub">
+                    <h5 class="pr">Green Club of GCT</h5>
+                    <h5 class="price">Dr.S.Murugan Asso PCE(CAS)</h5>
+                </div>
+                <p> The green club of Government college of Technology, an initiative by production Department submitted their ideas of Campus sustainability to the International green campus summit and finally won the SUSTAINABLE CAMPUS OF THE YEAR 2013 award from Pondicherry Chief Minister on 4th April 2013.
+
+                </p>
+                <button><a href="addstudent.html">Register</a></button>
+            </div>
+            </div>
+            <div class="food-item">
+              <img src="https://gct.ac.in/sites/gct.ac.in/files/9864ABA801B14A0FA8BD108EA552A149.jpg">
+              <div class="details">
+                  <div class="details-sub">
+                      <h5 class="pr">NSS GCT</h5>
+                      <h5 class="price">Dr.M.Kalpana Asso.PH(CAS)</h5>
+                  </div>
+                  <p> It is a service club.Its provide service to the society.It also actively conduct competition for student. </p>
+                  <button><a href="addstudent.html">Register</a></button>
+              </div>
+              </div>
+              <div class="food-item">
+                <img src="https://ysyouthgct.in/static/assets/img/logoYs.png">
+                <div class="details">
+                    <div class="details-sub">
+                        <h5 class="pr">Y'SC GCT</h5>
+                        <h5 class="price">Dr.L.Balakrishnan APP</h5>
+                    </div>
+                    <p>  The Treasurer of the club for the academic year 2018-19 has been from the Department Production Engineering .Vice President & Social Media In charge of the club for the academic year 2020-21 has been from Production Engineering . The technical project coordinator/ Head of  Tech Developers Community GCT the club for the academic year 2021-22 has been from Production Engineering .
+
+                    </p>
+                    <button><a href="addstudent.html">Register</a></button>
+                </div>
+                </div>
+                <div class="food-item">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIA5eKBSo7_sWgZrID9q32WATruQzT0VE2VnYh8cku7_TABgxpu267lg6MW0s5tl2kINI&usqp=CAU">
+                  <div class="details">
+                      <div class="details-sub">
+                          <h5 class="pr">NCC GCT</h5>
+                          <h5 class="price">Lt.N.Ajaymanikandan APPE</h5>
+                      </div>
+                      <p> An inter college NCC competition in which over 20 colleges and 9 schools participated. Our college's NCC cadets participated and performed with great enthusiasm and josh. 
+                        #Achievements
+                       1. Drill test - GCT NCC troop  2nd place
+                       2.CQMS.Sachin.H.M -2nd place in analytical thinking.
+                       3. Cadet P.Jakatratchagan 2nd prize in Kholna-Jodna (Rifle dismantling and reassembling) </p>
+                      <button><a href="addstudent.html">Register</a></button>
+                  </div>
+                  </div>
+                  <div class="food-item">
+                    <img src="data:image/jpeg;base64,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">
+                    <div class="details">
+                        <div class="details-sub">
+                            <h5 class="pr">Sports club of GCT</h5>
+                            <h5 class="price">MRS.D.Vimala MA MPHIL</h5>
+                        </div>
+                        <p>The General Captain for sports for the year 2015-16 has been from the Department of Production Engineering. The Athletics team captain for the year 2018-19 has been from the Department of Production Engineering. The Football team captain for the year 2015-16 has been from the Department of Production Engineering. The table tennis team captain for the year 2015-16 has been from the Department of Production Engineering.  </p>
+                        <button><a href="addstudent.html">Register</a></button>
+                    </div>
+                    </div>
+                    <div class="food-item">
+                      <img src="https://scpjaincollege.com/wp-content/uploads/elementor/thumbs/YouthRedCross-q5m5ugql5loy35ye1t9frhnmtuz49ov337d2r6jz3g.jpg">
+                      <div class="details">
+                          <div class="details-sub">
+                              <h5 class="pr">YRC GCT</h5>
+                              <h5 class="price">Dr.M.Kalpana Asso.PH(CAS)</h5>
+                          </div>
+                          <p> Youth RED Cross is the club doing many social related activity.And also conducting many competition for students and also service to the people  </p>
+                          <button><a href="addstudent.html">Register</a></button>
+                      </div>
+                      </div>
+                      <div class="food-item">
+                        <img src="https://stepup.pages.dev/favicon.png">
+                        <div class="details">
+                            <div class="details-sub">
+                                <h5 class="pr">gSARC GCT</h5>
+                                <h5 class="price">Dr.P.Ilamathi APPE</h5>
+                            </div>
+                            <p>gSARC (GCT Student Alumni Relationship Cell) is an initiative by GCTAA to revitalize relationships between the institution and the alumni across time, geography and interests.</p>
+                            <button><a href="addstudent.html">Register</a></button>
+                        </div>
+                        </div>
+                        <div class="food-item">
+                          <img src="https://www.sjcgct.org/sjc.svg">
+                          <div class="details">
+                              <div class="details-sub">
+                                  <h5 class="pr">SJC GCT</h5>
+                                  <h5 class="price">Dr.M.Kalpana Asso.PH(CAS)</h5>
+                              </div>
+                              <p> Student Journalist Council - GCT is the student-run media body of Government College of Technology, Coimbatore. Website: https://www.sjcgct.org/.
+                              </p>
+                              <button><a href="addstudent.html">Register</a></button>
+                          </div>
+                          </div>
+                          <div class="food-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlqDjiNjsL4fLaYCsQCBJFXARzoFjd6D9HLQ&usqp=CAU">
+                            <div class="details">
+                                <div class="details-sub">
+                                    <h5 class="pr">LDS GCT</h5>
+                                    <h5 class="price">Dr.J.Anbazhagan Vijay PE(CAS)</h5>
+                                </div>
+                                <p> The office bearers of the LITERARY AND DEBATING SOCIETY for the past seven years have been from the department of Production Engineering.</p>
+                                <button><a href="addstudent.html">Register</a></button>
+                            </div>
+                            </div>
+                            <div class="food-item">
+                              <img src="data:image/jpeg;base64,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">
+                              <div class="details">
+                                  <div class="details-sub">
+                                      <h5 class="pr">TMFA GCT</h5>
+                                      <h5 class="price">Dr.J.Anbazhagan Vijay PE(CAS)</h5>
+                                  </div>
+                                  <p> The President of Tamil Mandram for the academic year of 2014-15 has been from the Department of Production Engineering. The president for the academic year of 2018-19 is from the Department of Production Engineering .The treasurer of the club for the academic year 2019-20 is from Department of Production Engineering. </p>
+                                  <button><a href="addstudent.html">Register</a></button>
+                              </div>
+                              </div>
+                              <div class="food-item">
+                                <img src="https://i.ytimg.com/vi/QaoR1afxkLQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAj6UK_g6F_0riv-MjjVQ5p7EZfWA">
+                                <div class="details">
+                                    <div class="details-sub">
+                                        <h5 class="pr">AAC GCT</h5>
+                                        <h5 class="price">Ms.G.Ravindra Devi Revathy Asso PP(CAS)</h5>
+                                    </div>
+                                    <p>It is the Administration Aspirant council and It conduct early morning classes and evening classes apart from normal college hours and the students prepare by discussion among themselves  and this council help the students to prepare for Center and Stateboard Examination. </p>
+                                    <button><a href="addstudent.html">Register</a></button>
+                                </div>
+                                </div>
+                                <div class="food-item">
+                                    <img src="https://avatars.githubusercontent.com/u/33686558?s=280&v=4">
+                                    <div class="details">
+                                        <div class="details-sub">
+
+                                          <h5 class="pr">TEDx GCT</h5>
+                                          <h5 class="price">Dr.J.C.Miraclin Joyce Pamila PCSE(CAS)</h5>
+                                      </div>
+                                      <p>TEDxGCT is an event designed for GCT students, faculty and local community. Interesting ,influencing personalities across the country shares their bright ideas in this dais for the development of the community.  </p>
+                                      <button><a href="addstudent.html">Register</a></button>
+                                  </div>
+                                  </div>
+                                  <div class="food-item">
+                                    <img src="https://club.ndl.iitkgp.ac.in/images/only-logo.png">
+                                    <div class="details">
+                                        <div class="details-sub">
+
+                                          <h5 class="pr">NDLI GCT</h5>
+                                          <h5 class="price">Dr.S.Sathyapriya APCE</h5>
+                                      </div>
+                                      <p>An initiative to engage learners and promote effective utilization of NDLI's vast resources through competitions, training sessions and workshops.
+                                      </p>
+                                      <button><a href="addstudent.html">Register</a></button>
+                                  </div>
+                                  </div>
+                                  <div class="food-item">
+                                    <img src="https://media.licdn.com/dms/image/C5603AQH8vjsYXXQ9fQ/profile-displayphoto-shrink_800_800/0/1623126240409?e=2147483647&v=beta&t=AlZ94iOxACZG9dn_XX9va3nuMO_RMnt0qgxDsXcVxPg">
+                                    <div class="details">
+                                        <div class="details-sub">
+
+                                          <h5 class="pr">MUFX GCT</h5>
+                                          <h5 class="price">Dr.J.Anbazhagan Vijay PE(CAS)</h5>
+                                      </div>
+                                      <p>MUFX is the part of tamil mandram.Here they sing a songs in many and participate in many events.
+                                      </p>
+                                      <button><a href="addstudent.html">Register</a></button>
+                                  </div>
+                                  </div>
+</div>
+<script>
+    function cancelFullScreen() {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msCancelFullScreen) {
+            document.msCancelFullScreen();
+        }
+        link = document.getElementById("container");
+        link.removeAttribute("onclick");
+        link.setAttribute("onclick", "fullScreen(this)");
+    }
+    
+    function fullScreen(element) {
+        if (element.requestFullScreen) {
+            element.requestFullScreen();
+        } else if (element.webkitRequestFullScreen) {
+            element.webkitRequestFullScreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        }
+        link = document.getElementById("container");
+        link.removeAttribute("onclick");
+        link.setAttribute("onclick", "cancelFullScreen()");
+    }
+    window.onload = function() {
+      imgs = document.getElementById('slideshow').children;
+      interval = 8000;
+      currentPic = 0;
+      imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+      imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+      var infiniteLoop = setInterval(function(){
+        imgs[currentPic].removeAttribute('style');
+        if ( currentPic == imgs.length - 1) { currentPic = 0; } else { currentPic++; }
+        imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+        imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+      }, interval);
+    }
+    </script>
+    
+</body>
+</html>
